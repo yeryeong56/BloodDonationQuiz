@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헌혈 퀴즈</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="quiz-container">
+        <div id="start-screen">
+            <h1>헌혈에 관한 퀴즈 ^o^</h1>
+            <p>당신은 헌혈을 얼마나 알고 계시나요?<br>이 퀴즈는 총 7문제로, 70점 만점입니다. 헌혈에 대해 얼마나 알고 계신지 보여주세요!</p>
+            <button id="start-btn">시작</button>
+        </div>
+        <div id="quiz-screen" style="display: none;">
+            <div id="question-container">
+                <div id="question"></div>
+                <div id="choices"></div>
+                <button id="next-btn" style="display: none;">다음</button>
+            </div>
+        </div>
+        <div id="result-screen" style="display: none;">
+            <h2>결과</h2>
+            <p id="score"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
