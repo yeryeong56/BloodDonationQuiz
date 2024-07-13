@@ -118,8 +118,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function selectAnswer(selectedChoice, correctAnswer, explanation) {
-        if (selectedChoice === correctAnswer) {
-            score += 10; // 점수를 10점씩 올림
+        const buttons = choicesElement.getElementsByTagName('button');
+        for (let button of buttons) {
+            if (button.innerText.charAt(0) === selectedChoice) {
+                if (selectedChoice === correctAnswer) {
+                    score += 10;
+                    alert("정답입니다!");
+                } else {
+                    alert("오답입니다!\n" + explanation);
+                }
+                break;
+            }
         }
         nextBtn.style.display = 'block';
     }
