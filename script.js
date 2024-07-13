@@ -132,16 +132,11 @@ function selectAnswer(selectedChoice, correctAnswer, explanation) {
     nextBtn.style.display = 'block';
 }
 
-
-
 function showResults() {
     quizScreen.style.display = 'none';
     resultScreen.style.display = 'block';
+    scoreElement.innerText = `당신의 점수는 ${score}점 입니다...`;
     if (score === 100) {
         scoreElement.innerText = '축하합니다! 만점입니다!';
-    } else {
-        scoreElement.innerText = `당신의 점수는 ${score}점 입니다...`;
     }
-    additionalInfoElement.innerText = '혈액은 수혈이 필요한 환자의 생명을 구하는 유일한 수단으로 아직까지 대체할 물질이 없고 인공적으로 만들 수도 없습니다.\n\n혈액은 장기간 보관이 불가능하기 때문에 적정 혈액보유량을 유지하기 위해서는 지속적이고 꾸준한 헌혈이 필요합니다.\n\n우리는 언제든 수혈받을 상황에 처할 수 있습니다. 건강할 때 헌혈하는 것은 자신과 사랑하는 가족, 더 나아가 우리 모두를 위한 사랑의 실천입니다.';
-    resultScreen.appendChild(additionalInfoElement);
-}
+    additionalInfoElement.innerText = '혈액은 수혈이 필요한 환자의 생명을 구하는 유일한 수단으로 아직까지 대체
