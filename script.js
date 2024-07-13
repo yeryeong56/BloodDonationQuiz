@@ -137,7 +137,7 @@ function selectAnswer(selectedChoice, correctAnswer, explanation) {
 function showResults() {
     quizScreen.style.display = 'none';
     resultScreen.style.display = 'block';
-    if (score === 70) {
+    if (score === 100) {
         scoreElement.innerText = '축하합니다! 만점입니다!';
     } else {
         scoreElement.innerText = `당신의 점수는 ${score}점 입니다...`;
