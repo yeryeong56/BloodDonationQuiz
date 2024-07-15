@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const button = document.createElement('button');
             button.innerText = choice;
             button.classList.add('btn');
-            button.addEventListener('click', () => selectAnswer(choice.charAt(0), question.answer, question.explanation));
+            button.addEventListener('click', () => selectAnswer(button, choice.charAt(0), question.answer, question.explanation));
             choicesElement.appendChild(button);
         });
     }
@@ -117,17 +117,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    function selectAnswer(selectedChoice, correctAnswer, explanation) {
+    function selectAnswer(button, selectedChoice, correctAnswer, explanation) {
         const buttons = choicesElement.getElementsByTagName('button');
-        for (let button of buttons) {
-            if (button.innerText.charAt(0) === selectedChoice) {
+        for (let btn of buttons) {
+            btn.disabled = true;  // Disable all buttons after an answer is selected
+            if (btn === button) {
                 if (selectedChoice === correctAnswer) {
                     score += 10;
                     alert("정답입니다!");
                 } else {
                     alert("오답입니다!\n" + explanation);
                 }
-                break;
             }
         }
         nextBtn.style.display = 'block';
@@ -137,10 +137,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         quizScreen.style.display = 'none';
         resultScreen.style.display = 'block';
         scoreElement.innerText = `당신의 점수는 ${score}점 입니다.`;
-        if (score === 100) {
+        if (score ===  100) {
             additionalInfoElement.innerText = '축하합니다! 당신은 헌혈에 대해 잘 알고 계십니다.';
         } else {
             additionalInfoElement.innerText = '더 공부해보세요!';
         }
     }
 });
+
